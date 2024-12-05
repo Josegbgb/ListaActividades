@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  background-color: rgb(171, 235, 235);
+}
+#caja {
+  position: relative;
+}
+#eso {
+  background-color: bisque;
+  height: 400px;
+  width: 100%;
+}
+#modal-padre {
+  display: flex;
+  justify-content: center;
+}
+#modal {
+  position: absolute;
+  display: none;
+  background-color: rgba(239, 217, 128, 0.8);
+  width: 25%;
+  height: 260px;
+  top: 5%;
+  border: solid black 2px;
+  border-radius: 2em;
+}
+
+#btn-agregar {
+  display: flex;
+  justify-content: center;
+}
+#tabla-datos {
+  background: linear-gradient(
+    to Bottom,
+    rgba(45, 19, 148, 0.569),
+    rgba(3, 102, 120, 0.5)
+  );
+}
+
+.eliminar-btn {
+  background-color: red;
+  height: 2em;
+  width: 3em;
+}
+.listo-btn {
+  background-color: green;
+  height: 2em;
+  width: 3em;
+}
+#btn-agregar button {
+  align-items: center;
+  background-color: orange;
+  border: solid black 2px;
+  color: black;
+  border-radius: 2em;
+  height: 40px;
+  width: 20%;
+  margin-top: 20px;
+}
+#btn-enviar {
+  background-color: antiquewhite;
+  border: solid black 2px;
+  color: rgb(0, 0, 0);
+  border-radius: 2em;
+  position: absolute;
+  left: 42.5%;
+  right: 42.5%;
+  height: 40px;
+  width: 15%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-group {
+  margin-top: 1em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+h2 {
+  text-align: center;
+}
+input {
+  width: 40%;
+}
+#mensaje-eliminar {
+  display: none;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 0, 0, 0.81);
+  height: 50px;
+  width: 100%;
+}
+#mensaje-eliminar p {
+  margin-left: 20px;
+  padding-top: 15px;
+  margin-top: 0;
+}
+#mensaje-listo {
+  display: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(51, 255, 0);
+  height: 50px;
+  width: 100%;
+}
+#mensaje-listo p {
+  margin-left: 20px;
+  padding-top: 15px;
+  margin-top: 0;
+}
+tr th {
+  background-color: orange;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 2em;
+  border: solid 2px;
+  position: relative;
+  left: 10%;
+  width: 80%;
+  overflow: hidden;
+}
+td {
+  padding-left: 10px;
+}
+thead tr th:first-child {
+  border-top-left-radius: 2em;
+}
+thead tr th:last-child {
+  border-top-right-radius: 2em;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 2em;
+}
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 2em;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #modal {
+    width: 70%;
+    height: 230px;
+    top: 8%;
+  }
+  label {
+    margin-bottom: 0px;
+    font-size: small;
+  }
+  h2 {
+    font-size: large;
+  }
+  #btn-enviar {
+    left: 35%;
+    font-size: small;
+    width: 30%;
+  }
+  #btn-agregar button {
+    width: 30%;
+    font-size: smaller;
+  }
+  #tabla-datos {
+    font-size: small;
+  }
+  table {
+    border-radius: 1.5em;
+    left: 2.5%;
+    width: 95%;
+  }
+  .eliminar-btn {
+    height: 1em;
+    width: 2em;
+  }
+  .listo-btn {
+    height: 1em;
+    width: 2em;
+  }
+  th {
+    font-size: smaller;
+  }
+  #mensaje-eliminar {
+    height: 30px;
+  }
+  #mensaje-eliminar p {
+    font-size: smaller;
+    margin-left: 15px;
+    padding-top: 5px;
+  }
+  #mensaje-listo {
+    height: 30px;
+  }
+  #mensaje-listo p {
+    font-size: smaller;
+    margin-left: 15px;
+    padding-top: 5px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  #modal {
+    width: 300px;
+    height: 230px;
+    top: 8%;
+  }
+  label {
+    margin-bottom: 0px;
+    font-size: small;
+  }
+  h2 {
+    font-size: large;
+  }
+  #btn-enviar {
+    left: 35%;
+    font-size: small;
+    width: 30%;
+  }
+  #btn-agregar button {
+    width: 30%;
+    font-size: smaller;
+  }
+  table {
+    border-radius: 2em;
+    left: 5%;
+    width: 90%;
+  }
+  .eliminar-btn {
+    height: 1em;
+    width: 2em;
+  }
+  .listo-btn {
+    height: 1em;
+    width: 2em;
+  }
+  #tabla-datos {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #modal {
+    width: 300px;
+    height: 250px;
+    top: 8%;
+  }
+  h2 {
+    font-size: large;
+  }
+  #btn-agregar button {
+    width: 20%;
+    font-size: smaller;
+  }
+  #btn-enviar {
+    left: 35%;
+    font-size: small;
+    width: 30%;
+  }
+  #btn-agregar button {
+    width: 30%;
+    font-size: smaller;
+  }
+}
