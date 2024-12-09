@@ -181,7 +181,7 @@ tbody tr:last-child td:last-child {
     font-size: smaller;
   }
   #tabla-datos {
-    font-size: small;
+    font-size: x-small;
   }
   table {
     border-radius: 1.5em;
@@ -197,7 +197,7 @@ tbody tr:last-child td:last-child {
     width: 2em;
   }
   th {
-    font-size: smaller;
+    font-size: x-small;
   }
   #mensaje-eliminar {
     height: 30px;
