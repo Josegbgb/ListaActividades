@@ -15,9 +15,10 @@ body {
   justify-content: center;
 }
 #modal {
+  z-index: 1;
   position: absolute;
   display: none;
-  background-color: rgba(239, 217, 128, 0.8);
+  background-color: rgba(239, 217, 128, 1);
   width: 25%;
   height: 260px;
   top: 5%;
@@ -36,7 +37,13 @@ body {
     rgba(3, 102, 120, 0.5)
   );
 }
-
+#botones {
+  text-align: center;
+  vertical-align: middle;
+}
+#fecha {
+  text-align: center;
+}
 .eliminar-btn {
   background-color: red;
   height: 2em;
@@ -81,6 +88,9 @@ h2 {
   text-align: center;
 }
 input {
+  padding-left: 10px;
+  border-radius: 2em;
+  background-color: wheat;
   width: 40%;
 }
 #mensaje-eliminar {
@@ -108,9 +118,11 @@ input {
   margin-top: 0;
 }
 tr th {
+  text-align: center;
   background-color: orange;
 }
 table {
+  margin-top: 2em;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 2em;
@@ -119,10 +131,19 @@ table {
   left: 10%;
   width: 80%;
   overflow: hidden;
+  table-layout: fixed;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  word-wrap: break-word;
+  white-space: normal;
 }
 td {
   padding-left: 10px;
 }
+
 thead tr th:first-child {
   border-top-left-radius: 2em;
 }
@@ -140,7 +161,7 @@ tbody tr:last-child td:last-child {
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   #modal {
     width: 70%;
-    height: 230px;
+    height: 250px;
     top: 8%;
   }
   label {
@@ -193,6 +214,25 @@ tbody tr:last-child td:last-child {
     font-size: smaller;
     margin-left: 15px;
     padding-top: 5px;
+  }
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 27.5%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 25%;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 27.5%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 20%;
   }
 }
 

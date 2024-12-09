@@ -39,9 +39,9 @@ function recuperarActividades() {
     fila.innerHTML = `
         
         <td class="index">${item.actividad}</td>
-        <td>${item.fecha}</td>
+        <td id="fecha">${item.fecha}</td>
         <td>${item.descripcion}</td>
-        <td>
+        <td id="botones">
         <button class="listo-btn" onclick=eliminar(this)></button>
         <button class="eliminar-btn" onclick=eliminar(this)></button>
         </td>
