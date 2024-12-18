@@ -19,7 +19,7 @@ body {
   position: absolute;
   display: none;
   background-color: rgba(239, 217, 128, 1);
-  width: 25%;
+  width: 30%;
   height: 260px;
   top: 5%;
   border: solid black 2px;
@@ -65,15 +65,14 @@ body {
   margin-top: 20px;
 }
 #btn-enviar {
+  display: block;
   background-color: antiquewhite;
   border: solid black 2px;
   color: rgb(0, 0, 0);
   border-radius: 2em;
-  position: absolute;
-  left: 42.5%;
-  right: 42.5%;
+  margin: auto;
   height: 40px;
-  width: 15%;
+  width: 30%;
 }
 label {
   display: block;
