@@ -1,41 +1,77 @@
 body {
   margin: 0;
-  background-color: rgb(171, 235, 235);
+  animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right both;
 }
-#caja {
-  position: relative;
-}
-#eso {
-  background-color: bisque;
-  height: 400px;
-  width: 100%;
-}
-#modal-padre {
-  display: flex;
-  justify-content: center;
-}
-#modal {
-  z-index: 1;
-  position: absolute;
-  display: none;
-  background-color: rgba(239, 217, 128, 1);
-  width: 30%;
-  height: 260px;
-  top: 5%;
-  border: solid black 2px;
-  border-radius: 2em;
+@keyframes circle-in-top-right {
+  from {
+    clip-path: circle(0% at top right);
+    background-color: black;
+  }
+  to {
+    clip-path: circle(150vmax at top right);
+    background-color: #4c4f54;
+  }
 }
 
+#mensaje-error p {
+  color: black;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  text-align: center;
+}
+
+#modal-padre {
+  display: none;
+  justify-content: center;
+}
+#modal_back {
+  z-index: 1;
+  width: clamp(260px, 35%, 350px);
+  height: auto;
+  top: 5%;
+  background-color: #291c0e;
+  border-radius: 2em;
+  transition: all 0.8s;
+  position: absolute;
+}
+#modal {
+  background-color: #c7b7a3;
+  width: 99%;
+  border-radius: 1em;
+  height: 99%;
+  top: 5%;
+  border: solid black 2px;
+}
+#modal:hover {
+  transform: scale(0.97);
+  border-radius: 2em;
+}
+#modal:hover {
+  box-shadow: 0px 0px 30px 1px #b0b6b6;
+}
 #btn-agregar {
   display: flex;
   justify-content: center;
 }
+#btn-agregar button {
+  align-items: center;
+  background-color: #a78d78;
+  border: solid black 2px;
+  color: black;
+  border-radius: 2em;
+  height: 40px;
+  width: clamp(120px, 30%, 180px);
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  transition: 0.3s;
+}
+#btn-agregar button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 5px #ffffff5f;
+}
 #tabla-datos {
-  background: linear-gradient(
-    to Bottom,
-    rgba(45, 19, 148, 0.569),
-    rgba(3, 102, 120, 0.5)
-  );
+  font-size: clamp(0.7rem, 2.5vw, 1rem);
+  background: linear-gradient(to Bottom, #e1d4c2, #beb5a9);
 }
 #botones {
   text-align: center;
@@ -45,92 +81,113 @@ body {
   text-align: center;
 }
 .eliminar-btn {
-  background-color: red;
-  height: 2em;
-  width: 3em;
+  background-color: #6d2932;
+  cursor: pointer;
+  height: clamp(14px, 2.5vw, 26px);
+  width: clamp(28px, 5vw, 40px);
+}
+.eliminar-btn:hover {
+  box-shadow: 1px 1px 10px red;
 }
 .listo-btn {
-  background-color: green;
-  height: 2em;
-  width: 3em;
+  background-color: #6b9071;
+  cursor: pointer;
+  height: clamp(14px, 2.5vw, 26px);
+  width: clamp(28px, 5vw, 40px);
 }
-#btn-agregar button {
-  align-items: center;
-  background-color: orange;
-  border: solid black 2px;
-  color: black;
-  border-radius: 2em;
-  height: 40px;
-  width: 20%;
-  margin-top: 20px;
+.listo-btn:hover {
+  box-shadow: 1px 1px 10px green;
 }
-#btn-enviar {
-  display: block;
+#btn-modal {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+}
+.btn-enviar {
+  margin: 0 10px;
   background-color: antiquewhite;
   border: solid black 2px;
   color: rgb(0, 0, 0);
   border-radius: 2em;
-  margin: auto;
-  height: 40px;
-  width: 30%;
+  padding: 15px 15px;
+  height: auto;
+  width: auto;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btn-enviar:hover {
+  background-color: var(--backColor);
+  box-shadow: 0 0 0 5px #ffffff5f;
+  color: white;
 }
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: clamp(0px, 0.5vw, 5px);
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 .form-group {
-  margin-top: 1em;
   text-align: center;
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 h2 {
+  border-bottom: 2px solid black;
   text-align: center;
+  font-size: clamp(1rem, 2vw, 1.5em);
+  padding-bottom: 10px;
 }
+
 input {
   padding-left: 10px;
-  border-radius: 2em;
-  background-color: wheat;
-  width: 40%;
+  border-radius: 0.5em;
+
+  width: 36%;
+}
+input:focus {
+  outline: none;
+  border: 3px solid #606d73;
+  transform: scale(1.01);
+  background-color: rgb(229, 227, 227);
 }
 #mensaje-eliminar {
   display: none;
+  align-items: center;
   color: rgb(0, 0, 0);
   background-color: rgba(255, 0, 0, 0.81);
-  height: 50px;
+  height: clamp(30px, 7vw, 50px);
   width: 100%;
-}
-#mensaje-eliminar p {
-  margin-left: 20px;
-  padding-top: 15px;
-  margin-top: 0;
 }
 #mensaje-listo {
   display: none;
+  align-items: center;
   color: rgb(0, 0, 0);
   background-color: rgb(51, 255, 0);
-  height: 50px;
+  height: clamp(30px, 7vw, 50px);
   width: 100%;
 }
-#mensaje-listo p {
+.mensaje {
   margin-left: 20px;
-  padding-top: 15px;
-  margin-top: 0;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
 }
 tr th {
   text-align: center;
-  background-color: orange;
+  background-color: #a78d78;
 }
+
 table {
-  margin-top: 2em;
+  margin-top: 2em !important;
   border-collapse: separate;
+  margin: auto;
   border-spacing: 0;
   border-radius: 2em;
+  background-color: #a78d78;
   border: solid 2px;
   position: relative;
-  left: 10%;
-  width: 80%;
+  width: clamp(345px, 90%, 820px);
   overflow: hidden;
   table-layout: fixed;
+  box-shadow: rgb(189, 242, 253) 0px 0px 50px -15px;
 }
 th,
 td {
@@ -140,6 +197,7 @@ td {
   white-space: normal;
 }
 td {
+  border: 1px solid white;
   padding-left: 10px;
 }
 
@@ -158,61 +216,14 @@ tbody tr:last-child td:last-child {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  #modal {
-    width: 70%;
-    height: 250px;
-    top: 8%;
-  }
-  label {
-    margin-bottom: 0px;
-    font-size: small;
-  }
-  h2 {
-    font-size: large;
-  }
-  #btn-enviar {
-    left: 35%;
-    font-size: small;
-    width: 30%;
-  }
-  #btn-agregar button {
-    width: 30%;
-    font-size: smaller;
-  }
-  #tabla-datos {
-    font-size: x-small;
-  }
   table {
     border-radius: 1.5em;
-    left: 2.5%;
-    width: 95%;
-  }
-  .eliminar-btn {
-    height: 1em;
-    width: 2em;
-  }
-  .listo-btn {
-    height: 1em;
-    width: 2em;
   }
   th {
     font-size: x-small;
   }
-  #mensaje-eliminar {
-    height: 30px;
-  }
-  #mensaje-eliminar p {
-    font-size: smaller;
-    margin-left: 15px;
-    padding-top: 5px;
-  }
-  #mensaje-listo {
-    height: 30px;
-  }
-  #mensaje-listo p {
-    font-size: smaller;
-    margin-left: 15px;
-    padding-top: 5px;
+  input {
+    width: 32%;
   }
   th:nth-child(1),
   td:nth-child(1) {
@@ -232,68 +243,5 @@ tbody tr:last-child td:last-child {
   th:nth-child(4),
   td:nth-child(4) {
     width: 20%;
-  }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-  #modal {
-    width: 300px;
-    height: 230px;
-    top: 8%;
-  }
-  label {
-    margin-bottom: 0px;
-    font-size: small;
-  }
-  h2 {
-    font-size: large;
-  }
-  #btn-enviar {
-    left: 35%;
-    font-size: small;
-    width: 30%;
-  }
-  #btn-agregar button {
-    width: 30%;
-    font-size: smaller;
-  }
-  table {
-    border-radius: 2em;
-    left: 5%;
-    width: 90%;
-  }
-  .eliminar-btn {
-    height: 1em;
-    width: 2em;
-  }
-  .listo-btn {
-    height: 1em;
-    width: 2em;
-  }
-  #tabla-datos {
-    font-size: small;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  #modal {
-    width: 300px;
-    height: 250px;
-    top: 8%;
-  }
-  h2 {
-    font-size: large;
-  }
-  #btn-agregar button {
-    width: 20%;
-    font-size: smaller;
-  }
-  #btn-enviar {
-    left: 35%;
-    font-size: small;
-    width: 30%;
-  }
-  #btn-agregar button {
-    width: 30%;
-    font-size: smaller;
   }
 }

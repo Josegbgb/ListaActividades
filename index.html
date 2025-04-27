@@ -4,54 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body >
     <div id="mensaje-eliminar">
-      <p>Actividad eliminida</p>
+      <p class="mensaje">Actividad eliminida</p>
     </div>
     <div id="mensaje-listo">
-      <p>Actividad Completada</p>
+      <p class="mensaje">Actividad Completada</p>
     </div>
     <!--MODAL-->
     <div id="modal-padre">
-      <div id="modal">
-        <form>
-          <h2>Agrega la actividad que deseas</h2>
-          <hr />
-          <div class="form-group">
-            <label for="actividad">Actividad</label>
-            <input type="text" id="actividad" />
-          </div>
-          <div class="form-group">
-            <label for="">Descripcion</label>
-            <input type="text" id="descripcion" />
-          </div>
-          <div><button id="btn-enviar" onclick="enviar()">Agregar</button></div>
-          
-        </form>
+      <div id="modal_back">
+        <div id="modal">
+          <form>
+            <h2>Agrega la actividad que deseas</h2>
+            <div class="form-group">
+              <label for="actividad">Actividad</label>
+              <input type="text" id="actividad" />
+            </div>
+            <div class="form-group">
+              <label for="">Descripcion</label>
+              <input type="text" id="descripcion" />
+            </div>
+            <div id="btn-modal">
+              <div><button style="--backColor:#6b9071" class="btn-enviar" type="button" onclick="enviar()">Agregar</button></div>
+            <div><button style="--backColor: #6d2932"; class="btn-enviar" type="button" onclick="cerrarModal()">Cerrar</button></div>            
+            </div>
+            
+          </form>
+        </div>
       </div>
+      
     </div>
     
     <!--MODAL-->
 
-   
-      <table>
-        <thead>
-          <tr>
-            <th>Actividades</th>
-            <th>Fecha</th>
-            <th>Descripcion</th>
-            <th>Opciones</th>
-          </tr>   
-        </thead>
-        <tbody id="tabla-datos">
 
-        </tbody>
-      </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Actividades</th>
+        <th>Fecha</th>
+        <th>Descripcion</th>
+        <th>Opciones</th>
+      </tr>   
+    </thead>
+    <tbody id="tabla-datos">
+
+    </tbody>
+  </table>
+
+  
       <div id="btn-agregar">
-        <button id="btn-agregar" onclick="añadir()">Agregar a la lista</button>
+        <button onclick="añadir()">Agregar a la lista</button>
       </div>
     </div>
 
