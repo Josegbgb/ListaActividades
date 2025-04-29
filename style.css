@@ -216,6 +216,15 @@ tbody tr:last-child td:last-child {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+  #btn-agregar button:hover {
+    background-color: #a78d78;
+    box-shadow: none;
+  }
+  .btn-enviar:hover {
+    background-color: antiquewhite;
+    box-shadow: none;
+    color: black;
+  }
   table {
     border-radius: 1.5em;
   }
